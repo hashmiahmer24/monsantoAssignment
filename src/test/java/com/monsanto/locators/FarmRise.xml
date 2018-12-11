@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Locators>
+
+	
+	<launcherScreens>
+    	<languageSelection><![CDATA[id=com.climate.farmrise:id/txt_language_name]]></languageSelection>
+    	<processButton><![CDATA[id=com.climate.farmrise:id/btn_Proceed]]></processButton>	
+    	<termsAndConditionButton><![CDATA[id=com.climate.farmrise:id/btn_agree]]></termsAndConditionButton>
+    	
+ 	</launcherScreens>
+    
+ 	<homePage>
+    	<homePageLogo><![CDATA[id=com.climate.farmrise:id/action_home]]></homePageLogo>
+    	<mandiIcon><![CDATA[id=com.climate.farmrise:id/action_prices]]></mandiIcon>	
+    	<agronomyIcon><![CDATA[id=com.climate.farmrise:id/action_agronomy]]></agronomyIcon>
+    	<chatIcon><![CDATA[id=com.climate.farmrise:id/action_chat]]></chatIcon>
+    	<hamburgerIcon><![CDATA[id=com.climate.farmrise:id/action_more]]></hamburgerIcon>
+    	<okayIcon><![CDATA[id=com.climate.farmrise:id/tv_dismiss]]></okayIcon>
+    	<accessWeatherDetails><![CDATA[id=com.climate.farmrise:id/checkWeatherView]]></accessWeatherDetails>
+    	<weatherScreenHeader><![CDATA[id=com.climate.farmrise:id/weather_toolBar_Title]]></weatherScreenHeader>
+    	<firstTempIcon><![CDATA[//*[@text='Now']]]></firstTempIcon>
+    	<governmentSchemes><![CDATA[id=com.climate.farmrise:id/more_govtSchemes]]></governmentSchemes>
+    	<governmentSchemesScreenHeading><![CDATA[id=com.climate.farmrise:id/toolBar_Title]]></governmentSchemesScreenHeading>
+    	<searchIcon><![CDATA[id=android:id/search_button]]></searchIcon>
+    	<searchTextField><![CDATA[id=android:id/search_src_text]]></searchTextField>
+    	<searchResultPage><![CDATA[id=com.climate.farmrise:id/sorry_txt]]></searchResultPage>
+    	<searchResultPageItem><![CDATA[id=com.climate.farmrise:id/sorry_txt]]></searchResultPageItem>
+    	
+ 	</homePage>
+
+</Locators>

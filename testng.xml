@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MonsantoTest">
+ 
+	<test name="HappyPath">
+  <parameter name="deviceUDID" value="55e9b522"/>
+  <parameter name="platformVersion" value="6.0.1"/>
+  <parameter name="appName_with_apk_extension" value="base.apk"/>
+    <classes>
+      <class name="com.monsanto.util.DriverTestCase"/>
+      <class name="com.monsanto.TestScripts.TestScriptFarmRise">
+      <methods>
+      <include name="onBoradingAction"></include>
+      <include name="navigateWeatherAccessScreen"></include>
+      <include name="navigateToGovernmentSchemesPage"></include>
+      <include name="searchForKeyword"></include>
+      </methods>
+      </class>
+      </classes>
+  </test> <!-- eBayHappyPath -->
+</suite> <!-- eBayTest -->
+
+
+
