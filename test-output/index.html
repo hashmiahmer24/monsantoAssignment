@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
+                    <span class="method-stats">6 methods, 2 failed,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,6 +103,11 @@
                       <span>
                         <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-MonsantoTest" title="com.monsanto.TestScripts.TestScriptFarmRise" hash-for-method="searchForKeyword">searchForKeyword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-MonsantoTest" title="com.monsanto.TestScripts.TestScriptFarmRise" hash-for-method="tapOnLoadMoreSchemesButton">tapOnLoadMoreSchemesButton</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-MonsantoTest -->
@@ -129,6 +134,11 @@
                         <a href="#" class="method navigator-link" panel-name="suite-MonsantoTest" title="com.monsanto.TestScripts.TestScriptFarmRise" hash-for-method="onBoradingAction">onBoradingAction</a> <!-- method navigator-link -->
                       </span>
                       <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-MonsantoTest" title="com.monsanto.TestScripts.TestScriptFarmRise" hash-for-method="verifyAppTimeAgainstSystemTime">verifyAppTimeAgainstSystemTime</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                     </div> <!-- method-list-content passed suite-MonsantoTest -->
                   </li>
                 </ul>
@@ -153,8 +163,20 @@
                   </a> <!-- searchForKeyword -->
                   <span class="method-name">searchForKeyword</span>
                   <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
-	at com.monsanto.PageHelper.FarmRisePageHelper.verifyTheResult(FarmRisePageHelper.java:277)
-	at com.monsanto.TestScripts.TestScriptFarmRise.searchForKeyword(TestScriptFarmRise.java:59)
+	at com.monsanto.PageHelper.FarmRisePageHelper.verifyTheResult(FarmRisePageHelper.java:371)
+	at com.monsanto.TestScripts.TestScriptFarmRise.searchForKeyword(TestScriptFarmRise.java:71)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tapOnLoadMoreSchemesButton">
+                  </a> <!-- tapOnLoadMoreSchemesButton -->
+                  <span class="method-name">tapOnLoadMoreSchemesButton</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.monsanto.PageHelper.FarmRisePageHelper.scrollTillVisibleElement(FarmRisePageHelper.java:320)
+	at com.monsanto.TestScripts.TestScriptFarmRise.tapOnLoadMoreSchemesButton(TestScriptFarmRise.java:60)
 ... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -188,6 +210,13 @@
                   <span class="method-name">onBoradingAction</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAppTimeAgainstSystemTime">
+                  </a> <!-- verifyAppTimeAgainstSystemTime -->
+                  <span class="method-name">verifyAppTimeAgainstSystemTime</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-MonsantoTest-class-passed -->
         </div> <!-- panel MonsantoTest -->
@@ -210,7 +239,9 @@
         &lt;methods&gt;
           &lt;include name=&quot;onBoradingAction&quot;/&gt;
           &lt;include name=&quot;navigateWeatherAccessScreen&quot;/&gt;
+          &lt;include name=&quot;verifyAppTimeAgainstSystemTime&quot;/&gt;
           &lt;include name=&quot;navigateToGovernmentSchemesPage&quot;/&gt;
+          &lt;include name=&quot;tapOnLoadMoreSchemesButton&quot;/&gt;
           &lt;include name=&quot;searchForKeyword&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.monsanto.TestScripts.TestScriptFarmRise --&gt;
@@ -253,23 +284,31 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'searchForKeyword')
+data.setCell(0, 1, 'tapOnLoadMoreSchemesButton')
 data.setCell(0, 2, 'com.monsanto.TestScripts.TestScriptFarmRise')
-data.setCell(0, 3, 78467);
+data.setCell(0, 3, 84789);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'onBoradingAction')
 data.setCell(1, 2, 'com.monsanto.TestScripts.TestScriptFarmRise')
-data.setCell(1, 3, 24713);
+data.setCell(1, 3, 26863);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'navigateWeatherAccessScreen')
+data.setCell(2, 1, 'searchForKeyword')
 data.setCell(2, 2, 'com.monsanto.TestScripts.TestScriptFarmRise')
-data.setCell(2, 3, 13524);
+data.setCell(2, 3, 23706);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'navigateToGovernmentSchemesPage')
+data.setCell(3, 1, 'verifyAppTimeAgainstSystemTime')
 data.setCell(3, 2, 'com.monsanto.TestScripts.TestScriptFarmRise')
-data.setCell(3, 3, 4371);
+data.setCell(3, 3, 10691);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'navigateWeatherAccessScreen')
+data.setCell(4, 2, 'com.monsanto.TestScripts.TestScriptFarmRise')
+data.setCell(4, 3, 4819);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'navigateToGovernmentSchemesPage')
+data.setCell(5, 2, 'com.monsanto.TestScripts.TestScriptFarmRise')
+data.setCell(5, 3, 4042);
 window.suiteTableData['MonsantoTest']= { tableData: data, tableDiv: 'times-div-MonsantoTest'}
 return data;
 }
@@ -286,46 +325,62 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
+              <span class="reporter-method-name">verifyAppTimeAgainstSystemTime</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"><font color='blue'>Start execution of Test Method 'verifyAppTimeAgainstSystemTime'</font></span>
+                <span class="reporter-method-output"><font color='green'>App time: 11 PM</font></span>
+                <span class="reporter-method-output"><font color='green'>End time to scroll: 9 PM</font></span>
+                <span class="reporter-method-output"><font color='green'>Successfully scroll till 9 PM text.</font></span>
+                <span class="reporter-method-output"><font color='green'>App time showing as expected. App Start & End Time is : 11 PM and 9 PM and system start & end time is : 11 PM and 9 PM</font></span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
               <span class="reporter-method-name">navigateToGovernmentSchemesPage</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">com.monsanto.TestScripts.TestScriptFarmRise and Test method navigateToGovernmentSchemesPage is going to execute...</span>
-                <span class="reporter-method-output">Clicked on 'Hamburger' icon.</span>
-                <span class="reporter-method-output">'Government Schemes' link is displayed and tap on the same..</span>
-                <span class="reporter-method-output">Successfully landed on 'Government Schemes' page..</span>
+                <span class="reporter-method-output"><font color='blue'>Start execution of Test Method 'navigateToGovernmentSchemesPage'</font></span>
+                <span class="reporter-method-output"><font color='green'>Clicked on 'Hamburger' icon.</font></span>
+                <span class="reporter-method-output"><font color='green'>'Government Schemes' link is displayed and tap on the same..</font></span>
+                <span class="reporter-method-output"><font color='green'>Successfully landed on 'Government Schemes' page..</font></span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
             <div class="reporter-method-div">
               <span class="reporter-method-name">navigateWeatherAccessScreen</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">com.monsanto.TestScripts.TestScriptFarmRise and Test method navigateWeatherAccessScreen is going to execute...</span>
-                <span class="reporter-method-output">Tap on Access Weather Details..</span>
-                <span class="reporter-method-output">Successfully landed on 'Weather Details' screen..</span>
-                <span class="reporter-method-output">Successfully scroll till 9 PM text.</span>
+                <span class="reporter-method-output"><font color='blue'>Start execution of Test Method 'navigateWeatherAccessScreen'</font></span>
+                <span class="reporter-method-output"><font color='green'>Tap on Access Weather Details..</font></span>
+                <span class="reporter-method-output"><font color='green'>Successfully landed on 'Weather Details' screen..</font></span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
             <div class="reporter-method-div">
               <span class="reporter-method-name">onBoradingAction</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">com.monsanto.TestScripts.TestScriptFarmRise and Test method onBoradingAction is going to execute...</span>
-                <span class="reporter-method-output">Tap on 'English' langauge icon.</span>
-                <span class="reporter-method-output">Tap on 'Proceed' button.</span>
-                <span class="reporter-method-output">Tap on 'Agreement & Conditions' button.</span>
-                <span class="reporter-method-output">Home icon is displayed and tap on OK icon.</span>
-                <span class="reporter-method-output">Mandi icon is displayed and tap on OK icon.</span>
-                <span class="reporter-method-output">Agronomy icon is displayed and tap on OK icon.</span>
-                <span class="reporter-method-output">Chat icon is displayed and tap on OK icon.</span>
-                <span class="reporter-method-output">Hamburger icon is displayed and tap on OK icon.</span>
-                <span class="reporter-method-output">Tap on Home icon..</span>
+                <span class="reporter-method-output"><font color='blue'>Start execution of Test Method 'onBoradingAction'</font></span>
+                <span class="reporter-method-output"><font color='green'>Tap on 'English' langauge icon.</font></span>
+                <span class="reporter-method-output"><font color='green'>Tap on 'Proceed' button.</font></span>
+                <span class="reporter-method-output"><font color='green'>Tap on 'Agreement & Conditions' button.</font></span>
+                <span class="reporter-method-output"><font color='green'>Home icon is displayed and tap on OK icon.</font></span>
+                <span class="reporter-method-output"><font color='green'>Mandi icon is displayed and tap on OK icon.</font></span>
+                <span class="reporter-method-output"><font color='green'>Agronomy icon is displayed and tap on OK icon.</font></span>
+                <span class="reporter-method-output"><font color='green'>Chat icon is displayed and tap on OK icon.</font></span>
+                <span class="reporter-method-output"><font color='green'>Hamburger icon is displayed and tap on OK icon.</font></span>
+                <span class="reporter-method-output"><font color='green'>Tap on Home icon..</font></span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">tapOnLoadMoreSchemesButton</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"><font color='blue'>Start execution of Test Method 'tapOnLoadMoreSchemesButton'</font></span>
+                <span class="reporter-method-output"><font color='red'>'Load More Schemes' button is not present on page..</font></span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
             <div class="reporter-method-div">
               <span class="reporter-method-name">searchForKeyword</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">com.monsanto.TestScripts.TestScriptFarmRise and Test method searchForKeyword is going to execute...</span>
-                <span class="reporter-method-output">Tap on search icon..</span>
-                <span class="reporter-method-output">kisan keyword is entered into search text field..</span>
-                <span class="reporter-method-output">Tap on enter from keyboard..</span>
-                <span class="reporter-method-output">No item is displayed...</span>
+                <span class="reporter-method-output"><font color='blue'>Start execution of Test Method 'searchForKeyword'</font></span>
+                <span class="reporter-method-output"><font color='green'>Tap on search icon..</font></span>
+                <span class="reporter-method-output"><font color='green'>kisan keyword is entered into search text field..</font></span>
+                <span class="reporter-method-output"><font color='green'>Tap on enter from keyboard..</font></span>
+                <span class="reporter-method-output"><font color='red'>No item is displayed...</font></span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -350,42 +405,60 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">onBoradingAction</span>
-                <span class="method-start">64153 ms</span>
+                <span class="method-start">63777 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterEachTestMethod([TestResult name=onBoradingAction status=SUCCESS method=TestScriptFarmRise.onBoradingAction()[pri:0,...)</span>
-                <span class="method-start">88868 ms</span>
+                <span class="method-start">90644 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">navigateWeatherAccessScreen</span>
-                <span class="method-start">88871 ms</span>
+                <span class="method-start">90650 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterEachTestMethod([TestResult name=navigateWeatherAccessScreen status=SUCCESS method=TestScriptFarmRise.navigateWeathe...)</span>
-                <span class="method-start">102396 ms</span>
+                <span class="method-start">95471 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">verifyAppTimeAgainstSystemTime</span>
+                <span class="method-start">95473 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterEachTestMethod([TestResult name=verifyAppTimeAgainstSystemTime status=SUCCESS method=TestScriptFarmRise.verifyAppTi...)</span>
+                <span class="method-start">106165 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">navigateToGovernmentSchemesPage</span>
-                <span class="method-start">102397 ms</span>
+                <span class="method-start">106166 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterEachTestMethod([TestResult name=navigateToGovernmentSchemesPage status=SUCCESS method=TestScriptFarmRise.navigateTo...)</span>
-                <span class="method-start">106770 ms</span>
+                <span class="method-start">110211 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">tapOnLoadMoreSchemesButton</span>
+                <span class="method-start">110212 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterEachTestMethod([TestResult name=tapOnLoadMoreSchemesButton status=FAILURE method=TestScriptFarmRise.tapOnLoadMoreSc...)</span>
+                <span class="method-start">195004 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">searchForKeyword</span>
-                <span class="method-start">106771 ms</span>
+                <span class="method-start">197733 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterEachTestMethod([TestResult name=searchForKeyword status=FAILURE method=TestScriptFarmRise.searchForKeyword()[pri:0,...)</span>
-                <span class="method-start">185244 ms</span>
+                <span class="method-start">221440 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-class after">
+              <div class="configuration-test after">
                 <span class="method-name">aftertest</span>
-                <span class="method-start">187495 ms</span>
-              </div> <!-- configuration-class after -->
+                <span class="method-start">223189 ms</span>
+              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

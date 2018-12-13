@@ -1,19 +1,16 @@
-package com.monsanto.TestScripts;
+ package com.monsanto.TestScripts;
 
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import com.monsanto.util.DriverTestCase;
-import com.monsanto.util.ExecutionLog;
 
 public class TestScriptFarmRise extends DriverTestCase {
 
 	@Test
 	public void onBoradingAction(){
 	
-		Reporter.log(this.getClass().getName()
-				+ " and Test method "
-				+ Thread.currentThread().getStackTrace()[1].getMethodName()+" is going to execute...");
+		startExecutionOfNewTest("Start execution of Test Method '"
+				+ Thread.currentThread().getStackTrace()[1].getMethodName()+"'");
 		
 		farmPageHelper.handleLangaugeSelection();
 		farmPageHelper.clickOnProceedButton();
@@ -26,21 +23,28 @@ public class TestScriptFarmRise extends DriverTestCase {
 	@Test(dependsOnMethods="onBoradingAction")
 	public void navigateWeatherAccessScreen(){
 		
-		Reporter.log(this.getClass().getName()
-				+ " and Test method "
-				+ Thread.currentThread().getStackTrace()[1].getMethodName()+" is going to execute...");
+		startExecutionOfNewTest("Start execution of Test Method '"
+				+ Thread.currentThread().getStackTrace()[1].getMethodName()+"'");
 		
 		farmPageHelper.clickOnAccessWeatherDetailsLink();
 		farmPageHelper.verifyWeatherDetailsScreen();
-		farmPageHelper.scrollHorizontally(propertyReader.readApplicationFile("visibleText"));
+		
+	}
+	
+	@Test(dependsOnMethods="navigateWeatherAccessScreen")
+	public void verifyAppTimeAgainstSystemTime(){
+		
+		startExecutionOfNewTest("Start execution of Test Method '"
+				+ Thread.currentThread().getStackTrace()[1].getMethodName()+"'");
+		
+		farmPageHelper.verifyHours();
 	}
 	
 	@Test(dependsOnMethods="navigateWeatherAccessScreen")
 	public void navigateToGovernmentSchemesPage(){
 		
-		Reporter.log(this.getClass().getName()
-				+ " and Test method "
-				+ Thread.currentThread().getStackTrace()[1].getMethodName()+" is going to execute...");
+		startExecutionOfNewTest("Start execution of Test Method '"
+				+ Thread.currentThread().getStackTrace()[1].getMethodName()+"'");
 		
 		farmPageHelper.navigateToGovernmentSchemes();
 		farmPageHelper.verifyGovernmentSchemesScreen();
@@ -48,11 +52,19 @@ public class TestScriptFarmRise extends DriverTestCase {
 	}
 	
 	@Test(dependsOnMethods="navigateToGovernmentSchemesPage")
+	public void tapOnLoadMoreSchemesButton(){
+		
+		startExecutionOfNewTest("Start execution of Test Method '"
+				+ Thread.currentThread().getStackTrace()[1].getMethodName()+"'");
+		
+		farmPageHelper.scrollTillVisibleElement();
+	}
+	
+	@Test(dependsOnMethods="navigateToGovernmentSchemesPage")
 	public void searchForKeyword(){
 		
-		Reporter.log(this.getClass().getName()
-				+ " and Test method "
-				+ Thread.currentThread().getStackTrace()[1].getMethodName()+" is going to execute...");
+		startExecutionOfNewTest("Start execution of Test Method '"
+				+ Thread.currentThread().getStackTrace()[1].getMethodName()+"'");
 		
 		farmPageHelper.searchForSpecificKeyword(propertyReader.readApplicationFile("keyword"));
 		farmPageHelper.pressEnter();

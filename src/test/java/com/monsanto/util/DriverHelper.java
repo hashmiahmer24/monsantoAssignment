@@ -5,28 +5,19 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
-
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
 import io.appium.java_client.android.AndroidDriver;
 
 
 public abstract class DriverHelper {
 	
 	private AndroidDriver driver;
-	public ExtentReports extent;
-	public ExtentTest test;
-
 	public DriverHelper(AndroidDriver androidDriver) {
 		driver = androidDriver;
 		
@@ -112,25 +103,6 @@ public abstract class DriverHelper {
 		}
 	}
 	
-	public void waitForAllElementPresent(String locator) {
-		new WebDriverWait(getDriver(), 60).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(ByLocator(locator)));
-	}
-	
-	public void WaitForElementNotPresent(String locator, int timeout) {
-
-		for (int i = 0; i < timeout; i++) {
-			if (!isElementPresent(locator)) {
-				break;
-			}
-
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
 	public void WaitForElementVisible(String locator, int timeout) {
 
 		for (int i = 0; i < timeout; i++) {
@@ -148,23 +120,6 @@ public abstract class DriverHelper {
 		}
 	}
 
-	public void WaitForElementNotVisible(String locator, int timeout) {
-
-		for (int i = 0; i < timeout; i++) {
-			if (isElementPresent(locator)) {
-				if (!getDriver().findElement(ByLocator(locator)).isDisplayed()) {
-					break;
-				}
-			}
-
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
 	public void clickOn(String locator)
 	{		
 		this.WaitForElementPresent(locator,1);
@@ -210,8 +165,23 @@ public abstract class DriverHelper {
 		return text;
 	}
 	
+	public String getCurrentTime(){
+		DateFormat dateFormat = new SimpleDateFormat("h a");
+		String formattedDate = dateFormat.format(new Date()).toString();
+		return formattedDate;
+	}
 	
+	public static void positiveComment(String str_positiveMessage){
+		Reporter.log("<font color='green'>"+str_positiveMessage+"</font>");
+	}
 	
+	public void negativeComment(String str_negativeMessage){
+		Reporter.log("<font color='red'>"+str_negativeMessage+"</font>");
+	}
+	
+	public void startExecutionOfNewTest(String str_negativeMessage){
+		Reporter.log("<font color='blue'>"+str_negativeMessage+"</font>");
+	}
 	
 	
 }

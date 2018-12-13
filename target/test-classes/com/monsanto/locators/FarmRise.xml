@@ -26,6 +26,8 @@
     	<searchTextField><![CDATA[id=android:id/search_src_text]]></searchTextField>
     	<searchResultPage><![CDATA[id=com.climate.farmrise:id/sorry_txt]]></searchResultPage>
     	<searchResultPageItem><![CDATA[id=com.climate.farmrise:id/sorry_txt]]></searchResultPageItem>
+    	<loadMoreSchemesButton><![CDATA[//*[text()='Load More schemes']]]></loadMoreSchemesButton>
+    	<hoursText><![CDATA[id=com.climate.farmrise:id/hourlyValue]]></hoursText>
     	
  	</homePage>
 

@@ -12,13 +12,15 @@
       <methods>
       <include name="onBoradingAction"></include>
       <include name="navigateWeatherAccessScreen"></include>
+      <include name="verifyAppTimeAgainstSystemTime"></include>
       <include name="navigateToGovernmentSchemesPage"></include>
+      <include name="tapOnLoadMoreSchemesButton"></include>
       <include name="searchForKeyword"></include>
       </methods>
       </class>
       </classes>
-  </test> <!-- eBayHappyPath -->
-</suite> <!-- eBayTest -->
+  </test> <!-- HappyPath -->
+</suite> <!-- MonsantoTest -->
 
 
 

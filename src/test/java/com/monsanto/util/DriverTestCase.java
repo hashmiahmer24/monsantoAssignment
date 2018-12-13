@@ -4,9 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -15,14 +12,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.Reporter;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-
 import com.monsanto.PageHelper.FarmRisePageHelper;
-
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -32,7 +26,6 @@ public abstract class DriverTestCase{
 
 
 	public PropertyReader propertyReader;
-	//public eBayPageHelper ebayPagehelper;
 	public FarmRisePageHelper farmPageHelper;
 	public AndroidDriver driver;
 	public static AppiumDriverLocalService appiumService;
@@ -43,9 +36,6 @@ public abstract class DriverTestCase{
 	@Parameters({"deviceUDID","platformVersion","appName_with_apk_extension"})
 	@BeforeClass
 	public void setUp(String deviceUDID,String platformVersion,String appName_with_apk_extension) {
-		
-		//Clear all execution logs.
-		clearAllLogsAtExecutionLogfolder();
 		
 		//Clear all screenshots
 		clearAllScreenShots("Screenshots");
@@ -74,9 +64,9 @@ public abstract class DriverTestCase{
 		
 	}
 	
-	@AfterClass
+	@AfterTest
 	public void aftertest(){
-		//ebayPagehelper = null;
+		farmPageHelper = null;
 		stopServer();
 	}
 	
@@ -103,6 +93,7 @@ public abstract class DriverTestCase{
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "ONE E1003");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersion);
         capabilities.setCapability("appWaitActivity", "SplashActivity, SplashActivity,OtherActivity, *, *.SplashActivity");
+        
 		try {
 			capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 			capabilities.setCapability("adbPort", "5038");
@@ -126,14 +117,6 @@ public abstract class DriverTestCase{
 		return path;
 	}
 
-	// delete all the file under Execution Log
-	public void clearAllLogsAtExecutionLogfolder() {
-		String path = getPath();
-		File directory = new File(path + "//ExecutionLog");
-		for (File f : directory.listFiles())
-			f.delete();
-	}
-
 	// delete all the file under screenshots folder.
 	public void clearAllScreenShots(String folderName) {
 		String path = getPath();
@@ -142,6 +125,8 @@ public abstract class DriverTestCase{
 			f.delete();
 	}
 	
-	
+	public void startExecutionOfNewTest(String str_negativeMessage){
+		Reporter.log("<font color='blue'>"+str_negativeMessage+"</font>");
+	}
 
 }
